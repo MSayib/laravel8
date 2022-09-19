@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>{{ $title }} | @ibb.ac</title>
+    {{ $styles }}
 </head>
 
 <body>
