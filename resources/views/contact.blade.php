@@ -1,5 +1,3 @@
-@extends('layouts.app', ['title' => 'Contact'])
-@section('content')
+<x-app-layout title="Contact">
     <h1>Contact</h1>
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt dicta sunt doloremque incidunt quos sit error molestiae. At, harum nisi nulla exercitationem rem quisquam ex eos, sint esse commodi quas.
-@endsection
+</x-app-layout>
