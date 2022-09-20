@@ -1,4 +1,3 @@
-{{-- <x-app-layout title="{{ $name ?? 'Profile' }}"> --}}
-<x-app-layout :title="$name ?? 'Profile'">
-    <h1>{{ $name ?? 'Profile' }}</h1>
+<x-app-layout :title="$username ?? 'Profile'">
+    <h1>{{ $username ?? 'Profile' }}</h1>
 </x-app-layout>

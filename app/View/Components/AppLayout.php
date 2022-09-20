@@ -17,7 +17,6 @@ class AppLayout extends Component
     public function __construct($title = null)
     {
         $this->title = $title; //buat Props
-        // $this->title = $title ?? "Page";
     }
 
     /**

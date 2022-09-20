@@ -29,6 +29,7 @@ class Navbar extends Component
             'About' => '/about',
             'Contact' => '/contact',
             'Profile' => '/profile',
+            'Tasks' => '/tasks',
         ];
 
         //digenerate artisan sebagai components.navbar, kita bisa ganti lokasi ke layouts.navbar

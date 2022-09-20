@@ -1,26 +1,23 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileInformationController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', fn() => view('home')); //Min: PHP 7.4+
-Route::view('contact', 'contact');
-Route::view('about', 'about');
-// Route::view('profile', 'profile');
+// Route::get('/', [HomeController::class, 'index']);
 
+// Invokable
+// Route::get('/', [HomeController::class, '__invoke']);
+Route::get('/', HomeController::class);
+Route::get('profile/{identifier}', ProfileInformationController::class);
 
-// Option 1:
-// Route::get('profile', function(Request $request) {
-//     $name = $request->nami; // baseURL/profile?nami=Sayib
-//     return view('profile', ['name' => $name]);
-// });
+Route::get('tasks', [TaskController::class, 'index']);
+Route::post('tasks', [TaskController::class, 'store']);
+Route::get('tasks/{id}/edit', [TaskController::class, 'edit']);
+Route::put('tasks/{id}', [TaskController::class, 'update']);
+Route::delete('tasks/{id}', [TaskController::class, 'destroy']);
 
-// Option 2:
-Route::get('profile/{username}', function($username) {
-    return view('profile', ['name' => $username]); // baseURL/profile/Sayib
-});
-
-// Option 2.1: More binding
-// Route::get('profile/{username}/{posts}', function($username, $posts) {
-//     return view('profile', ['name' => $username, 'posts' => $posts]); // baseURL/profile/Sayib/posts
-// });
+Route::get('contact', [ContactController::class, 'create']);
+Route::post('contact', [ContactController::class, 'store']);
